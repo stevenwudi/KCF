@@ -67,8 +67,6 @@ class KCFTracker:
             self.cell_size = 2
             self.feature_bandwidth_sigma = 1
             self.adaptation_rate = 0.01
-            if self.sub_feature_type == 'grabcut':
-                self.grabcut_mask_path = './figures/grabcut_masks/'
 
     def train(self, im, init_rect):
         """
