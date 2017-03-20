@@ -47,6 +47,7 @@ def main():
 
     rect_flag = False
     global frame
+    point_loc = [500,500, 100,100]
     while True:
         # Capture frame-by-frame
         ret, frame = cap.read()
@@ -64,11 +65,11 @@ def main():
                 break
 
         # if there are two reference points, then crop the region of interest
-        # from teh image and display it
-        if len(refPt) == 2:
-            rect_flag = True
-            roi = clone[refPt[0][1]:refPt[1][1], refPt[0][0]:refPt[1][0]]
-            cv2.imshow("ROI", roi)
+        # from the image and display it
+            if len(refPt) == 2:
+                rect_flag = True
+                roi = clone[refPt[0][1]:refPt[1][1], refPt[0][0]:refPt[1][0]]
+                cv2.imshow("ROI", roi)
 
         if train_flag:
             print('start training the tracker...')
